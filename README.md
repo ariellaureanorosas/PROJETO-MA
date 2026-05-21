@@ -69,7 +69,7 @@ PROJETO DPT/
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/ariellaureanorosas/PROJETO-DPT.git
+   git clone https://github.com/ariellaureanorosas/PROJETO-MA.git
    cd PROJETO-DPT
    ```
 
@@ -146,6 +146,22 @@ utils/helpers.py                      models/produto.py
 | Python | 3.6+ | Linguagem principal de programação |
 | JSON | nativo | Persistência de dados |
 | OS/Sys | nativo | Manipulação de caminhos e limpeza de tela |
+
+---
+
+## Melhorias Futuras
+
+- [ ] Interface gráfica (Tkinter ou PyQt)
+- [ ] Relatórios em PDF
+- [ ] Autenticação de usuários
+- [ ] Migração para banco de dados relacional (SQLite)
+- [ ] Testes automatizados
+
+---
+
+## Autores
+
+- **Ariella Aureano Rosas** — [@ariellaureanorosas](https://github.com/ariellaureanorosas)
 
 ---
 
