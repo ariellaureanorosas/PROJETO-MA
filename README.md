@@ -149,22 +149,6 @@ utils/helpers.py                      models/produto.py
 
 ---
 
-## Melhorias Futuras
-
-- [ ] Interface gráfica (Tkinter ou PyQt)
-- [ ] Relatórios em PDF
-- [ ] Autenticação de usuários
-- [ ] Migração para banco de dados relacional (SQLite)
-- [ ] Testes automatizados
-
----
-
-## Autores
-
-- **Ariella Aureano Rosas** — [@ariellaureanorosas](https://github.com/ariellaureanorosas)
-
----
-
 ## Licença
 
 Distribuído sob a licença MIT. Consulte o arquivo `LICENSE` para mais informações.
