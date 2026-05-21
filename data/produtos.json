@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "id_produto": 1,
+    "nome": "Camisa seleçao Amarela",
+    "preco": 30.0,
+    "tamanho": "p/gg",
+    "cor": "Amarela",
+    "quantidade": 15
+  },
+  {
+    "id_produto": 2,
+    "nome": "Camisa Sport",
+    "preco": 150.0,
+    "tamanho": "p/m/g/gg",
+    "cor": "Preta e vermelha",
+    "quantidade": 100
+  },
+  {
+    "id_produto": 3,
+    "nome": "Camisa Brasil",
+    "preco": 30.0,
+    "tamanho": "p",
+    "cor": "Amarela",
+    "quantidade": 20
+  },
+  {
+    "id_produto": 4,
+    "nome": "Camisa Brasil",
+    "preco": 50.0,
+    "tamanho": "p",
+    "cor": "amarela",
+    "quantidade": 20
+  },
+  {
+    "id_produto": 5,
+    "nome": "Camisa",
+    "preco": 30.0,
+    "tamanho": "p",
+    "cor": "amarela",
+    "quantidade": 30
+  }
+]

@@ -7,6 +7,7 @@ DB_PATH = os.path.join(BASE_DIR, "data", "produtos.json")
 
 def carregar_dados():
     if not os.path.exists(DB_PATH):
+        salvar_dados([])
         return []
     with open(DB_PATH, "r", encoding="utf-8") as f:
         return json.load(f)

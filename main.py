@@ -1,12 +1,16 @@
-import sys
 import os
+import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from services import produto_service
-from utils.helpers import ler_texto, ler_float, ler_int, formatar_moeda
+from utils.helpers import formatar_moeda, ler_float, ler_int, ler_texto
 
 LIMITE_ESTOQUE_BAIXO = 5
+
+
+def limpar_tela():
+    os.system("clear" if os.name == "posix" else "cls")
 
 
 def exibir_cabecalho():
@@ -29,7 +33,9 @@ def exibir_menu():
 
 
 def exibir_produto(p):
-    print(f"  ID: {p.id_produto} | {p.nome} | {formatar_moeda(p.preco)} | Tam: {p.tamanho} | Cor: {p.cor} | Qtd: {p.quantidade}")
+    print(
+        f"  ID: {p.id_produto} | {p.nome} | {formatar_moeda(p.preco)} | Tam: {p.tamanho} | Cor: {p.cor} | Qtd: {p.quantidade}"
+    )
 
 
 def cadastrar_produto():
@@ -41,7 +47,9 @@ def cadastrar_produto():
     quantidade = ler_int("  Quantidade em estoque: ")
 
     produto = produto_service.cadastrar(nome, preco, tamanho, cor, quantidade)
-    print(f"\n  Produto '{produto.nome}' cadastrado com sucesso! (ID: {produto.id_produto})")
+    print(
+        f"\n  Produto '{produto.nome}' cadastrado com sucesso! (ID: {produto.id_produto})"
+    )
 
 
 def listar_produtos():
@@ -100,18 +108,37 @@ def atualizar_produto():
         return
 
     print(f"  Editando: {produto.nome} (deixe vazio para manter)")
-    nome = ler_texto(f"  Nome [{produto.nome}]: ", obrigatorio=False)
-    preco_str = input(f"  Preco [{produto.preco}]: ").strip().replace(",", ".")
-    tamanho = ler_texto(f"  Tamanho [{produto.tamanho}]: ", obrigatorio=False)
-    cor = ler_texto(f"  Cor [{produto.cor}]: ", obrigatorio=False)
-    qtd_str = input(f"  Quantidade [{produto.quantidade}]: ").strip()
+    nome = ler_texto(f"  Nome [{produto.nome}]: ", obrigatorio=False) or None
+    tamanho = ler_texto(f"  Tamanho [{produto.tamanho}]: ", obrigatorio=False) or None
+    cor = ler_texto(f"  Cor [{produto.cor}]: ", obrigatorio=False) or None
 
-    preco = float(preco_str) if preco_str else None
-    quantidade = int(qtd_str) if qtd_str else None
+    preco = None
+    while True:
+        entrada = input(f"  Preco [{produto.preco}]: ").strip().replace(",", ".")
+        if not entrada:
+            break
+        try:
+            preco = float(entrada)
+            if preco < 0:
+                print("  Valor nao pode ser negativo.")
+                continue
+            break
+        except ValueError:
+            print("  Entrada invalida. Digite um numero valido.")
 
-    nome = nome if nome else None
-    tamanho = tamanho if tamanho else None
-    cor = cor if cor else None
+    quantidade = None
+    while True:
+        entrada = input(f"  Quantidade [{produto.quantidade}]: ").strip()
+        if not entrada:
+            break
+        try:
+            quantidade = int(entrada)
+            if quantidade < 0:
+                print("  Valor nao pode ser negativo.")
+                continue
+            break
+        except ValueError:
+            print("  Entrada invalida. Digite um numero inteiro.")
 
     produto_service.atualizar(id_produto, nome, preco, tamanho, cor, quantidade)
     print("  Produto atualizado com sucesso!")
@@ -148,6 +175,9 @@ def main():
         exibir_cabecalho()
         exibir_menu()
         opcao = input("\n  Escolha uma opcao: ").strip()
+
+        if opcao in ("1", "2", "3", "4", "5", "6", "7", "8"):
+            limpar_tela()
 
         if opcao == "1":
             cadastrar_produto()
