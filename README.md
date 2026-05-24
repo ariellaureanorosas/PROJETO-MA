@@ -1,8 +1,10 @@
 # Sistema de Gestão de Estoque — Loja de Roupas
 
-![Python](https://img.shields.io/badge/python-3.6%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
-![Status](https://img.shields.io/badge/status-acad%C3%AAmico-orange)
+<div align="center">
+  <img src="https://img.shields.io/badge/python-3.6%2B-blue" alt="Python">
+  <img src="https://img.shields.io/badge/license-MIT-green" alt="License">
+  <img src="https://img.shields.io/badge/status-acad%C3%AAmico-orange" alt="Status">
+</div>
 
 Sistema de gerenciamento de estoque para loja de roupas desenvolvido em Python com arquitetura modular, separação de responsabilidades e persistência de dados via JSON. Projeto acadêmico da disciplina de Programação Estruturada.
 
@@ -122,12 +124,16 @@ MENU PRINCIPAL:
 
 ### Princípios Aplicados
 
+<div align="center">
+
 | Princípio | Descrição |
 |-----------|-----------|
 | **Separação de Responsabilidades** | Cada módulo possui uma função específica e bem definida |
 | **Single Responsibility** | Classes e funções responsáveis por uma única tarefa |
 | **DRY (Don't Repeat Yourself)** | Código reutilizável e modular |
 | **Persistência** | Dados preservados entre execuções via arquivo JSON |
+
+</div>
 
 ### Fluxo de Dados
 
@@ -141,11 +147,15 @@ utils/helpers.py                      models/produto.py
 
 ## Tecnologias
 
+<div align="center">
+
 | Tecnologia | Versão | Finalidade |
 |------------|--------|------------|
 | Python | 3.6+ | Linguagem principal de programação |
 | JSON | nativo | Persistência de dados |
 | OS/Sys | nativo | Manipulação de caminhos e limpeza de tela |
+
+</div>
 
 ---
 
